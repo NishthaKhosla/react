@@ -11,3 +11,248 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.item-card {
+  width: 250px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(7, 7, 7, 0.1);
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.item-card:hover {
+  transform: scale(1.05);
+}
+
+.img-fluid {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #e0e0e0;
+ 
+}
+
+.item-card_information {
+  padding: 15px;
+}
+
+.pricing {
+  margin-bottom: 10px;
+}
+
+.pricing span {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+}
+
+.pricing small {
+  margin-left: 8px;
+  color: #777;
+}
+
+.title h3 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.cart-add {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cart-add:hover {
+  background: linear-gradient(45deg, #0056b3, #004080);
+}
+
+.cart-add span {
+  margin-right: 8px;
+}
+
+
+body {
+  margin: 0;
+  padding-top: 10rem;
+  padding-bottom: 6rem; /* Add padding to the top of the body to accommodate the fixed header */
+}
+
+.lists {
+  display: flex;
+  margin: 1rem;
+  flex-wrap: wrap;
+}
+
+/**header css**/
+.header {
+  display: flex;
+  height: 5rem;
+  background-color: #0056b3;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Set a high z-index to ensure the header is above other content */
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
+  
+  
+}
+
+
+.logo-img {
+  width: 6rem;
+  height: 4rem;
+  border-radius: 50%; /* Change to 50% for a perfect circle */
+  
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add box shadow for depth */
+  margin-left: 2rem;
+  margin-top: 0.1rem;
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition on hover */
+}
+
+.logo-img:hover {
+  transform: scale(1.1); /* Scale up on hover for a subtle zoom effect */
+}
+
+.title {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.title h3 {
+  color: whitesmoke;
+}
+
+.buttons {
+  margin-left: auto;
+  flex-wrap: wrap; /* Move buttons to the right by using auto margin */
+}
+
+.button {
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  height: max-content;
+  padding: 0.5rem 1rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add a smooth transition on hover */
+}
+
+.button:hover {
+  background-color: whitesmoke;
+  color: #0056b3;
+}
+
+/* .subheader{
+  display: flex;
+  width: 100%;
+  height: 2rem;
+  border: black solid;
+  margin:0%;
+}
+.clist{
+  display: flex;
+
+} */
+
+.subheader-container {
+  position: fixed;
+  width: 100%;
+  
+  z-index: 1000;
+  top: 66px;
+  ul {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      list-style: none;
+      background-color: rgb(210, 210, 210);
+      box-shadow: 0 15px 10px -15px #1111112b;
+      padding: 0 32px;
+      overflow-x: auto;
+      li {
+          a {
+              display: inline-block;
+              padding: 10px 16px;
+              text-decoration: none;
+              color: black;
+              font-size: 14px;
+              transition: background 100ms ease-in-out;
+              white-space: nowrap;
+
+              &.active, &:hover {
+                  background-color: #0056b3;
+                  color: white;
+              }
+          }
+      }
+  }
+}
+
+@media screen and (max-width:768px) {
+  .subheader-container {
+      ul {
+          padding: 0 16px;
+      }
+  }
+}
+
+.search-bar {
+
+  margin-top: 1rem;
+  margin-left: 15rem;
+}
+
+.search-input {
+  padding: 0.5rem;
+  border: 1px solid #fff;
+  width:20rem;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: white;
+  color: rgb(10, 10, 10);
+}
+.search-btn{
+  margin-left: 0px;
+  margin-top:1rem;
+  background-color: white;
+  border: white solid;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* Footer.css */
+.footer {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  
+  background-color:  #0056b3;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+ 
+}
+
+.footer-content {
+  max-width: 960px;
+  margin: 0 auto;
+}
