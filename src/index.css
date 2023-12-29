@@ -20,7 +20,9 @@ code {
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(7, 7, 7, 0.1);
   margin: 10px;
+  padding: 0px;
   transition: transform 0.3s ease-in-out;
+  background-color: #f0eded;
 }
 
 .item-card:hover {
@@ -32,16 +34,17 @@ code {
   height: 200px;
   object-fit: cover;
   border-bottom: 1px solid #e0e0e0;
+  
  
 }
 
-.item-card_information {
-  padding: 15px;
+.item-card-information {
+  padding: 10px;
+
+  margin-top: 0px;
 }
 
-.pricing {
-  margin-bottom: 10px;
-}
+
 
 .pricing span {
   font-size: 1.8em;
@@ -60,16 +63,37 @@ code {
   color: #333;
 }
 
+.sizes {
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+align-content: center;
+ width:3rem;
+ height: 3rem;
+  
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  color: rgb(19, 3, 3);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add a smooth transition on hover */
+}
+
+.sizes:hover {
+  background-color:  #0056b3;
+  color: whitesmoke;
+}
+
 .cart-add {
   display: inline-block;
   width: 100%;
-  padding: 12px;
+  align-items: center;
   background: linear-gradient(45deg, #007bff, #0056b3);
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
+ 
 }
 
 .cart-add:hover {
@@ -79,12 +103,60 @@ code {
 .cart-add span {
   margin-right: 8px;
 }
+.cart-img{
+ 
+  margin-left:7rem;
+}
+.cart-text{
+align-items: center;
+padding-left: 4rem;
+padding-right: 2rem;
+
+
+}
+
+/* Styling for the counter component */
+.counter {
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for the counter buttons and value */
+.count-text {
+  display: flex;
+  align-items: center;
+}
+
+.count-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 0 4px;
+  transition: background-color 0.3s ease;
+}
+
+.count-btn:hover {
+  background-color: #004080;
+}
+
+.count-value {
+  margin: 0 8px;
+  font-weight: bold;
+}
+.counter{
+  align-items: center;
+  margin-left: 90px;
+}
 
 
 body {
   margin: 0;
   padding-top: 10rem;
-  padding-bottom: 6rem; /* Add padding to the top of the body to accommodate the fixed header */
+  padding-bottom: 6rem;
+   /* Add padding to the top of the body to accommodate the fixed header */
 }
 
 .lists {
