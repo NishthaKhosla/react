@@ -1,0 +1,245 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.item-card {
+  width: 250px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(7, 7, 7, 0.1);
+  margin: 10px;
+  padding: 0px;
+  transition: transform 0.3s ease-in-out;
+  background-color: #f0eded;
+}
+
+.item-card:hover {
+  transform: scale(1.05);
+}
+
+.img-fluid {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #e0e0e0;
+  
+ 
+}
+
+.item-card-information {
+  padding: 10px;
+
+  margin-top: 0px;
+}
+
+
+
+.pricing span {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+}
+
+.pricing small {
+  margin-left: 8px;
+  color: #777;
+}
+
+.title h3 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.sizes {
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+align-content: center;
+ width:3rem;
+ height: 3rem;
+  
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  color: rgb(19, 3, 3);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add a smooth transition on hover */
+}
+
+.sizes:hover {
+  background-color:  #0056b3;
+  color: whitesmoke;
+}
+
+.cart-add {
+ 
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+ 
+}
+
+.cart-add:hover {
+  background: linear-gradient(45deg, #0056b3, #004080);
+}
+
+.cart-add span {
+  margin-right: 8px;
+}
+.cart-img{
+ 
+  margin-left:7rem;
+}
+.cart-text{
+align-items: center;
+padding-left: 4rem;
+padding-right: 2rem;
+
+
+}
+
+/* Styling for the counter component */
+.counter {
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for the counter buttons and value */
+.count-text {
+  display: flex;
+  align-items: center;
+}
+
+.count-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 0 4px;
+  transition: background-color 0.3s ease;
+}
+
+.count-btn:hover {
+  background-color: #004080;
+}
+
+.count-value {
+  margin: 0 8px;
+  font-weight: bold;
+}
+.counter{
+  align-items: center;
+  margin-left: 90px;
+}
+
+
+body {
+  margin: 0;
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+   /* Add padding to the top of the body to accommodate the fixed header */
+}
+
+.lists {
+  display: flex;
+  margin: 1rem;
+  flex-wrap: wrap;
+}
+
+/**Form css*/
+.lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f8ff; /* Light Blue Background Color */
+}
+
+.form {
+  background-color: #f0eded;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.2); 
+  margin-right:20px;/* Blue Shadow Effect */
+
+  h2 {
+    color:  #0505aa; /* Dark Blue Heading Color */
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    div {
+      margin-bottom: 15px;
+
+      label {
+        color: #0505aa; /* Dark Blue Label Color */
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #0505aa; /* Dark Blue Border */
+        border-radius: 5px;
+        outline: none;
+        transition: border-color 0.3s ease-in-out;
+
+        &:focus {
+          border-color:  #0505aa; /* Royal Blue Border on Focus */
+        }
+      }
+    }
+  }
+}
+/* Modern Blue Button Styles */
+.modern-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  transition: background 0.3s ease;
+}
+
+.modern-button:hover {
+  background: linear-gradient(45deg, #0056b3, #004080);
+}
+
+/* Additional Styling (Adjust as needed) */
+.modern-button:focus {
+  outline: none;
+}
+
+.modern-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
