@@ -22,7 +22,7 @@ const ListItem = ({ data }) => {
 
   return (
     <div className={"item-card"}>
-      <img className={"img-fluid"} src={data.thumbnail} alt="no-img"></img>
+      <img className={"img-fluid"} src={data.thumbnail} alt="no-img" />
       <div className={"item-card-information"}>
         <div className={"pricing"}>
           <span>${data.discountedPrice}</span>
@@ -41,22 +41,25 @@ const ListItem = ({ data }) => {
         <button className="sizes">{data.size3}</button>
         <button className="sizes">{data.size4}</button>
       </div>
-      <div className={"cart-add"}>
-        <h3 className={"cart-text"}>{message}</h3>
-        <img className={"cart-img"} src={AddToCart} alt="cart"></img>
 
+      {count < 1 ? (
+        <button className={"cart-add"} onClick={increaseCount}>
+          <h3 className={"cart-text"}>{message}</h3>
+          <img className={"cart-img"} src={AddToCart} alt="cart" />
+        </button>
+      ) : (
         <div className={"counter"}>
           <span className={"count-text"}>
-            <button className={"count-btn,btn1"} onClick={decreaseCount}>
+            <button className={"count-btn btn1"} onClick={decreaseCount}>
               -
             </button>
             <span className={"count-value"}>{count}</span>
-            <button className={"count-btn,btn2"} onClick={increaseCount}>
+            <button className={"count-btn btn2"} onClick={increaseCount}>
               +
             </button>
           </span>
         </div>
-      </div>
+      )}
     </div>
   );
 };

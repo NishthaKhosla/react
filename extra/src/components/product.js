@@ -46,6 +46,7 @@ const Products = () => {
 
   const handlethumbnail = (event) => {
     setthumbnail(event.target.value);
+    
   };
 
   const updateForm = (event) => {
@@ -123,7 +124,7 @@ const Products = () => {
           <div>
             <label htmlFor="thumbnail">Thumbnail</label>
             <input
-              type="texture"
+              type="text"
               placeholder="Enter thumnail name"
               value={thumbnail}
               onChange={handlethumbnail}

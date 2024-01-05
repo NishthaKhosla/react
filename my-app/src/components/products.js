@@ -6,8 +6,13 @@ import p3 from "../assets/icons/p3.jpeg"
 import p4 from "../assets/icons/p4.jpeg"
 import p5 from "../assets/icons/p5.jpeg"
 import p6 from "../assets/icons/p6.jpeg"
+import { useState } from "react"
 
-const items = [
+
+const Products = () => {
+   
+        const [items,setitems] = useState([
+
     {
         id: 0,
         title: "Title of this Item 1",
@@ -86,21 +91,37 @@ const items = [
         size3 : "XL",
         size4 : "XXL"
     
-    }
+    },
+
+    {
+        id: 5,
+        title: "Title of this Item 5",
+        price: 400,
+        discountedPrice: 350,
+        thumbnail: p3,
+        Description:" Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        size1 : "M",
+        size2 : "L",
+        size3 : "XL",
+        size4 : "XXL"
+    
+    }])
 
 
-]
-
-const Products = () => {
-    return (
+return (
         <div className={"lists"}>
             
-                <ListItem data={items[0]}></ListItem>
+                {/* <ListItem data={items[0]}></ListItem>
                 <ListItem data={items[1]}></ListItem>
                 <ListItem data={items[2]}></ListItem>
                 <ListItem data={items[3]}></ListItem>
                 <ListItem data={items[4]}></ListItem>
-                <ListItem data={items[5]}></ListItem>
+                <ListItem data={items[5]}></ListItem> */}
+                {
+                    items.map(item =>{
+                        return(<ListItem key = {item.id} data ={item}/>)
+                    })
+                }
             
         </div>
     )
