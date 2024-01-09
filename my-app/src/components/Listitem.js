@@ -42,12 +42,12 @@ const ListItem = ({ data }) => {
         <button className="sizes">{data.size4}</button>
       </div>
 
-      {count < 1 ? (
+      {count < 1 ? 
         <button className={"cart-add"} onClick={increaseCount}>
           <h3 className={"cart-text"}>{message}</h3>
           <img className={"cart-img"} src={AddToCart} alt="cart" />
         </button>
-      ) : (
+       : (
         <div className={"counter"}>
           <span className={"count-text"}>
             <button className={"count-btn btn1"} onClick={decreaseCount}>

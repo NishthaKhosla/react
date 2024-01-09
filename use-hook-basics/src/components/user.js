@@ -4,9 +4,7 @@ const User = () => {
   const [isLoggedIn, setLoggedin] = useState(false);
 
   useEffect(() => {
-    //const isTokenSet = localStorage.getItem("demo-token");
-    // const isTokenSet = true;
-    // setLoggedin(isTokenSet);
+   
     document.title = isLoggedIn ? "welcome User" : "Please Login";
   }, [isLoggedIn]);
 
