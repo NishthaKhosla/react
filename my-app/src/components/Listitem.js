@@ -1,4 +1,5 @@
 import AddToCart from "../assets/icons/cart.png";
+import thumbnail from "../assets/icons/placeholder.png";
 import { useState } from "react";
 
 const ListItem = ({ data }) => {
@@ -9,9 +10,11 @@ const ListItem = ({ data }) => {
     setCount((prev) => {
       return prev <= 1 ? 0 : prev - 1;
     });
+
     if (count - 1 <= 0) {
       setMessage("Add to cart");
     }
+    
   };
 
   const increaseCount = () => {
@@ -22,7 +25,7 @@ const ListItem = ({ data }) => {
 
   return (
     <div className={"item-card"}>
-      <img className={"img-fluid"} src={data.thumbnail} alt="no-img" />
+      <img className={"img-fluid"} src={`./assets/${data.thumbnail}`} alt="no-img" />
       <div className={"item-card-information"}>
         <div className={"pricing"}>
           <span>${data.discountedPrice}</span>
@@ -34,13 +37,14 @@ const ListItem = ({ data }) => {
           <h3>{data.Title}</h3>
         </div>
         <div className={"Description"}>
-          <span>{data.Description}</span>
-        </div>
-        <button className="sizes">{data.size1}</button>
+          <span>{data.title}</span>
+         </div>
+        {/* <button className="sizes">{data.size1}</button>
         <button className="sizes">{data.size2}</button>
         <button className="sizes">{data.size3}</button>
-        <button className="sizes">{data.size4}</button>
-      </div>
+        <button className="sizes">{data.size4}</button> */}
+      </div>  
+
 
       {count < 1 ? 
         <button className={"cart-add"} onClick={increaseCount}>
