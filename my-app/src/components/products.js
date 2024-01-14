@@ -98,24 +98,21 @@ const Products = () => {
 
   useEffect(() => {
     //you can use async and await as well in place of .this
-    //async function fetchItems() {
-    // fetch("https://react-9e31f-default-rtdb.firebaseio.com/items.json")
 
-    //   const data = response.data
-    //   const transformedData = data.map((
+    async function fetchItems() {
+      fetch("https://react-9e31f-default-rtdb.firebaseio.com/items.json");
 
-    //           items,index) => {
-    //             return{
-    //               ...items,
-    //               id:index
-    //             }
-    //           }
-    //         )
-    //         setitems(transformedData);
+      const data = response.data;
+      const transformedData = data.map((items, index) => {
+        return {
+          ...items,
+          id: index,
+        };
+      });
+      setitems(transformedData);
+    }
 
-    //         }
-
-    // fetchItems();
+    fetchItems();
 
     fetch("https://react-9e31f-default-rtdb.firebaseio.com/items.json")
       .then((response) => response.json())
