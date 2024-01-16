@@ -1,15 +1,17 @@
-import ListItem from "./Listitem";
-import p2 from "../assets/icons/p2.jpeg";
-import p1 from "../assets/icons/p1.jpeg";
-import p3 from "../assets/icons/p3.jpeg";
-import p4 from "../assets/icons/p4.jpeg";
-import p5 from "../assets/icons/p5.jpeg";
-import p6 from "../assets/icons/p6.jpeg";
-import placeholder from "../assets/icons/placeholder.png";
-import { useState, useEffect } from "react";
 
+// import p2 from "../assets/icons/p2.jpeg";
+// import p1 from "../assets/icons/p1.jpeg";
+// import p3 from "../assets/icons/p3.jpeg";
+// import p4 from "../assets/icons/p4.jpeg";
+// import p5 from "../assets/icons/p5.jpeg";
+// import p6 from "../assets/icons/p6.jpeg";
+//import placeholder from "../assets/icons/placeholder.png";
+import ListItem from "./Listitem";
+import { useState } from "react";
+
+import Loader from "./UI/loader";
 const Products = () => {
-  const [items, setitems] = useState([
+  const [items, setItems] = useState([
     // {
     //     id: 0,
     //     title: "Title of this Item 1",
@@ -96,44 +98,75 @@ const Products = () => {
     // }
   ]);
 
-  useEffect(() => {
-    //you can use async and await as well in place of .this
+  const [loader, setLoader] = useState(true);
 
-    async function fetchItems() {
-      fetch("https://react-9e31f-default-rtdb.firebaseio.com/items.json");
+   //useEffect(() => {
+    // you can use async and await as well in place of .this
 
-      const data = response.data;
-      const transformedData = data.map((items, index) => {
-        return {
-          ...items,
-          id: index,
-        };
-      });
-      setitems(transformedData);
+  //   async function fetchItems() {
+  //     try {
+  //       const response = await axios.get(
+  //         "https://react-9e31f-default-rtdb.firebaseio.com/items.json"
+  //       );
+  //       const data = response.data;
+  //       const transformedData = data.map((items, index) => {
+  //         return {
+  //           ...items,
+  //           id: index,
+  //         };
+  //       });
+  //       setitems(transformedData);
+  //     } catch (error) {
+  //       alert("some error occured");
+  //     } finally {
+  //       setLoader(false);
+  //     }
+  //   }
+  //   fetchItems();
+  // }, []);
+
+//    
+
+fetch("https://react-9e31f-default-rtdb.firebaseio.com/items.json")
+  .then(async (response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
     }
+    try {
+      const data = await response.json();
+      const transformedData = Object.keys(data).map((key) => ({
+        ...data[key],
+        id: key,
+      }));
+      setItems(transformedData);
+    } catch (error) {
+      console.error("Error parsing response:", error);
+      alert("Error parsing response");
+    } finally {
+      setLoader(false);
+    }
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+    //alert("Some error occurred");
+    setLoader(false);
+  });
 
-    fetchItems();
 
-    fetch("https://react-9e31f-default-rtdb.firebaseio.com/items.json")
-      .then((response) => response.json())
-      .then((data) => {
-        const transformedData = data.map((items, index) => {
-          return {
-            ...items,
-            id: index,
-          };
-        });
-        setitems(transformedData);
-      });
-  }, []);
+
+
+
 
   return (
-    <div className={"lists"}>
-      {items.map((item) => {
-        console.log(item);
-        return <ListItem key={item.id} data={item} />;
-      })}
-    </div>
+    <>
+      <div className={"lists"}>
+        {items.map((item) => {
+          console.log(item);
+          return <ListItem key={item.id} data={item} />;
+        })}
+      </div>
+      {loader && <Loader />}
+    </>
   );
 };
 
